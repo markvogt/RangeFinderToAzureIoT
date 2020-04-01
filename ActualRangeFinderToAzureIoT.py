@@ -31,6 +31,7 @@ def iothub_client_init():
     return client
 
 
+
 def ping():
 	#Get reading from HC-SR04...
 	GPIO.setmode(GPIO.BCM)
@@ -55,16 +56,12 @@ def ping():
 	  pulse_end = time.time()
 	 
 	pulse_duration = pulse_end - pulse_start
-	 
 	distance = pulse_duration * 17150
-	 
 	distance = round(distance, 2)
-	 
 	print( "Distance:",distance,"cm" )
-	 
 	GPIO.cleanup()
-
     return distance
+
 
 
 def iothub_client_telemetry_sample_run():
